@@ -16,6 +16,7 @@ public class Library  {
 
     public Library(Menu menu) {
         this.menu = menu;
+
     }
 
     protected void addGame(Game game) {
@@ -61,4 +62,13 @@ public class Library  {
 
 
     }
+    protected void viewGameLibrary() {
+        int position = 1;
+        for (int i = 0; i < gamelibrary.size(); i++) {
+            System.out.println(position + ". " + gamelibrary.get(i));
+            position++;
+        }
+
+    }
+
 }

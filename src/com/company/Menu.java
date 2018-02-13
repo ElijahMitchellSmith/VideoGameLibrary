@@ -39,11 +39,7 @@ public class Menu {
                     break;
                 case 3:
                     //View library
-                    int position = 1;
-                    for(int i = 0; i < library.gamelibrary.size(); i++) {
-                        System.out.println(position + ". " + library.gamelibrary.get(i));
-                        position++;
-                    }
+                    System.out.println(library.viewGameLibrary());
 
                     startMenu();
                     break;
