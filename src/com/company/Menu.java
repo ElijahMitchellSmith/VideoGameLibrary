@@ -2,9 +2,10 @@ package com.company;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class Menu {
     //User Menu to prompt user for library options
+    public int position;
 
     private Scanner input = new Scanner(System.in);
     private Library library = new Library(this);
@@ -32,13 +33,18 @@ public class Menu {
                     break;
                 case 2:
                     //Remove game
-                    System.out.println("You have chosen to remove a game from your library. \n" + "Here os a list of games, type the number of the one you would like to remove");
+                    System.out.println("You have chosen to remove a game from your library. \n" + "Here is a list of games, type the number of the one you would like to remove");
                     // create method to list all games availible
                     library.removeGame(input.nextInt());
                     break;
                 case 3:
                     //View library
-                    System.out.println(library.gamelibrary);
+                    int position = 1;
+                    for(int i = 0; i < library.gamelibrary.size(); i++) {
+                        System.out.println(position + ". " + library.gamelibrary.get(i));
+                        position++;
+                    }
+
                     startMenu();
                     break;
                 case 4:
@@ -54,6 +60,7 @@ public class Menu {
                     break;
                 case 7:
                     //exit
+                    System.exit(0);
                     break;
                 default:
                     // promopt user to pick a valid number and loop back to the menu
