@@ -35,21 +35,25 @@ public class Menu {
                     //Remove game
                     System.out.println("You have chosen to remove a game from your library. \n" + "Here is a list of games, type the number of the one you would like to remove");
                     // create method to list all games availible
+                    library.viewGameLibrary();
                     library.removeGame(input.nextInt());
                     break;
                 case 3:
                     //View library
-                    System.out.println(library.viewGameLibrary());
-
+                    library.viewGameLibrary();
                     startMenu();
                     break;
                 case 4:
                     //Check out
                     System.out.println("Which game would you like to remove? Type in its number");
+                    library.viewGameLibrary();
                     library.checkoutGame(input.nextInt());
+                    startMenu();
                     break;
                 case 5:
                     //check in
+                    library.checked
+                    library.checkInGame(input.nextInt());
                     break;
                 case 6:
                     //view checked out

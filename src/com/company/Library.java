@@ -48,6 +48,7 @@ public class Library  {
         calendar.add(Calendar.DAY_OF_YEAR,3);
         System.out.println("This game is due back on: " + dateFormat.format(calendar.getTime()));
         game.setDueDate(dateFormat.format(calendar.getTime()));
+        checkedOutGames.add(game);
         gamelibrary.remove(gameIndex);
         menu.startMenu();
 
@@ -55,8 +56,10 @@ public class Library  {
     protected void checkInGame(int gameIndex) {
 
         gameIndex -= gameIndex;
+        Calendar calendar = Calendar.getInstance();
 
-        Game game = gamelibrary.get(gameIndex);
+        Game game = checkedOutGames.get(gameIndex);
+        System.out.println("You have returned this game on " + dateFormat.format(calendar.getTime()));
 
         checkedOutGames.remove(game);
 
@@ -65,8 +68,15 @@ public class Library  {
     protected void viewGameLibrary() {
         int position = 1;
         for (int i = 0; i < gamelibrary.size(); i++) {
-            System.out.println(position + ". " + gamelibrary.get(i));
+            System.out.println(position + ". " + gamelibrary.get(i).getTitle());
             position++;
+        }
+        protected void viewCheckedOutGames() {
+            for (int i = 0; i < checkedOutGames.size(); i++) {
+                System.out.println(position + ". " + checkedOutGames.get(i).getTitle());
+                position++;
+
+
         }
 
     }
