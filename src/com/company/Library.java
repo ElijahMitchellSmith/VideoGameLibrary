@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class Library  {
+public class Library {
 
 
     public final Menu menu;
-    public  List<Game> gamelibrary = new ArrayList<Game>();
+    public List<Game> gamelibrary = new ArrayList<Game>();
     private List<Game> checkedOutGames = new ArrayList<Game>();
     private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
 
@@ -31,19 +31,22 @@ public class Library  {
 
     protected void removeGame(int gameIndex) {
 
-        gameIndex -= gameIndex;
+
+        gameIndex--;
         gamelibrary.remove(gameIndex);
         System.out.println("This game has been removed from your library");
         menu.startMenu();
 
+
     }
+
     protected void checkoutGame(int gameIndex) {
-        gameIndex -= gameIndex;
+        gameIndex--;
 
         Game game = gamelibrary.get(gameIndex);
         Calendar calendar = Calendar.getInstance();
         System.out.println("You checked this game out on: " + dateFormat.format(calendar.getTime()));
-        calendar.add(Calendar.DAY_OF_YEAR,3);
+        calendar.add(Calendar.DAY_OF_YEAR, 3);
         System.out.println("This game is due back on: " + dateFormat.format(calendar.getTime()));
         game.setDueDate(dateFormat.format(calendar.getTime()));
         checkedOutGames.add(game);
@@ -54,7 +57,7 @@ public class Library  {
 
     protected void checkInGame(int gameIndex) {
 
-        gameIndex -= gameIndex;
+        gameIndex--;
         Calendar calendar = Calendar.getInstance();
 
         Game game = checkedOutGames.get(gameIndex);
@@ -72,6 +75,7 @@ public class Library  {
             position++;
         }
     }
+
     protected void viewCheckedOutGames() {
         int position = 1;
 
@@ -82,7 +86,7 @@ public class Library  {
 
     }
 
-        }
+}
 
 
 
