@@ -41,8 +41,6 @@ public class Library  {
         gameIndex -= gameIndex;
 
         Game game = gamelibrary.get(gameIndex);
-
-        checkedOutGames.add(game);
         Calendar calendar = Calendar.getInstance();
         System.out.println("You checked this game out on: " + dateFormat.format(calendar.getTime()));
         calendar.add(Calendar.DAY_OF_YEAR,3);
@@ -53,6 +51,7 @@ public class Library  {
         menu.startMenu();
 
     }
+
     protected void checkInGame(int gameIndex) {
 
         gameIndex -= gameIndex;
@@ -65,20 +64,27 @@ public class Library  {
 
 
     }
+
     protected void viewGameLibrary() {
         int position = 1;
         for (int i = 0; i < gamelibrary.size(); i++) {
             System.out.println(position + ". " + gamelibrary.get(i).getTitle());
             position++;
         }
-        protected void viewCheckedOutGames() {
-            for (int i = 0; i < checkedOutGames.size(); i++) {
-                System.out.println(position + ". " + checkedOutGames.get(i).getTitle());
-                position++;
+    }
+    protected void viewCheckedOutGames() {
+        int position = 1;
 
-
+        for (int i = 0; i < checkedOutGames.size(); i++) {
+            System.out.println(position + ". " + checkedOutGames.get(i).getTitle());
+            position++;
         }
 
     }
 
-}
+        }
+
+
+
+
+

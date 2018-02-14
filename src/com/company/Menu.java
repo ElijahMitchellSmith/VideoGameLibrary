@@ -52,11 +52,14 @@ public class Menu {
                     break;
                 case 5:
                     //check in
-                    library.checked
+                    System.out.println("What Game would you like to check in? Type in its number.");
+                    library.viewCheckedOutGames();
                     library.checkInGame(input.nextInt());
                     break;
                 case 6:
                     //view checked out
+                    System.out.println("Here is a list of your checked out games");
+                    library.viewCheckedOutGames();
                     break;
                 case 7:
                     //exit
