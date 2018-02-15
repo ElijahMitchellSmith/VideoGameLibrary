@@ -33,10 +33,17 @@ public class Menu {
                     break;
                 case 2:
                     //Remove game
-                    System.out.println("You have chosen to remove a game from your library. \n" + "Here is a list of games, type the number of the one you would like to remove");
-                    // create method to list all games availible
-                    library.viewGameLibrary();
-                    library.removeGame(input.nextInt());
+                    if (library.gamelibrary.isEmpty()) {
+                        System.out.println("There are no games to select from!");
+                        startMenu();
+                    } else {
+                        System.out.println("You have chosen to remove a game from your library. \n" + "Here is a list of games, type the number of the one you would like to remove");
+
+                        // create method to list all games availible
+                        library.viewGameLibrary();
+                        library.removeGame(input.nextInt());
+                    }
+
                     break;
                 case 3:
                     //View library
