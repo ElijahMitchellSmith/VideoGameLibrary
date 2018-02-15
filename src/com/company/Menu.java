@@ -55,6 +55,7 @@ public class Menu {
                     System.out.println("What Game would you like to check in? Type in its number.");
                     library.viewCheckedOutGames();
                     library.checkInGame(input.nextInt());
+                    startMenu();
                     break;
                 case 6:
                     //view checked out
@@ -67,6 +68,7 @@ public class Menu {
                     break;
                 default:
                     // promopt user to pick a valid number and loop back to the menu
+                    System.out.println("Pick a valid number!");
                     break;
             }
         } catch (InputMismatchException ime) {

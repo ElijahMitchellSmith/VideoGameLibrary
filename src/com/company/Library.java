@@ -23,8 +23,8 @@ public class Library {
         // code goes here to add game to where ever we are savaing game things to
         //Save game title
         //add name to a view list
-        gamelibrary.add(game);
-        menu.startMenu();
+            gamelibrary.add(game);
+            menu.startMenu();
 
 
     }
