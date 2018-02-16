@@ -30,9 +30,9 @@ public class Library {
     }
 
     protected void removeGame(int gameIndex) {
-        if (gamelibrary.isEmpty()) {
+       // if (gamelibrary.isEmpty()) {
             System.out.println("There are no games to remove.");
-        }
+       // }
 
 
         gameIndex--;
