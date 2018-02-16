@@ -67,6 +67,7 @@ public class Library {
         System.out.println("You have returned this game on " + dateFormat.format(calendar.getTime()));
 
         checkedOutGames.remove(game);
+        gamelibrary.add(game);
 
 
     }
