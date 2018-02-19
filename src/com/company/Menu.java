@@ -59,7 +59,10 @@ public class Menu {
                     break;
                 case 5:
                     //check in
-                    System.out.println("What Game would you like to check in? Type in its number.");
+                    if (library.gamelibrary.isEmpty()) {
+                        System.out.println("There are no games to select from!");
+                        startMenu();
+                    } else System.out.println("What Game would you like to check in? Type in its number.");
                     library.viewCheckedOutGames();
                     library.checkInGame(input.nextInt());
                     startMenu();
